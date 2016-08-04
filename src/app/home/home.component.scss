@@ -1,0 +1,77 @@
+nav.no-color{
+  background-color: transparent;
+  box-shadow: none !important;
+  ul{
+    a{
+      color: white;
+    }
+  }
+}
+
+section{
+  min-height: 100%;
+}
+
+section.intro{
+  background-image: url(public/images/intro.jpg);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.intro{
+  .brand-logo{
+    height: 150px;
+    background-size: 150px;
+  }
+}
+
+.intro{
+  .brand-section{
+    top: 50px;
+    position: relative;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+.brand-logo{
+  display: block;
+  background: url(public/images/verifiedplots-logo.png) no-repeat;
+  background-position: 50%;
+}
+
+.login-status{
+  line-height: 1;
+  z-index: 1;
+  font-style: normal;
+  position: absolute;
+  text-align: right;
+  top: 10px;
+  right: 0;
+  padding-right: 20px;
+  font-size: 1em;
+  color: white;
+}
+.tagline{
+  display: block;
+  margin: 25px 0 40px;
+  color: #fff;
+  text-align: center;
+  text-shadow: none;
+  p{
+    font-family: 'Open Sans';
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 20px;
+font-weight: 300;
+  }
+  h1{
+    font-size: 36px;
+    font-weight: 700;
+    font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+  }
+}
+p{
+  margin-left: auto;
+  margin-right: auto;
+}

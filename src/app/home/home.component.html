@@ -1,0 +1,29 @@
+<section class="intro">
+  <div class="login-status">
+    Sign in /Register
+  </div>
+  <div class="brand-section">
+    <div class="brand-logo"></div>
+    <div class="tagline">
+      <p>The mental peace in buying/selling properties</p>
+      <h4>IT'S THE ONLY PLACE YOU WILL FIND IT.</h4>
+    </div>
+    <br>
+    <br>
+    <div class="searbox">
+      <div class="row">
+        <div class="col m6 s12 offset-m3">
+          
+            <div class="input-field col s8">
+              <!-- <input type="text" id="autocomplete" materialize="autocomplete" [materializeParams]="[{Apple:null,Google:null}]" >
+              <label for="autocomplete">Autocomplete</label> -->
+              <ng2-completer [(ngModel)]="searchStr" [dataService]="dataService" [minSearchLength]="0" (selected)="locationSelection($event)"></ng2-completer>
+            </div>
+            <a class="col s4 waves-effect waves-light btn-large" (click)="navigateResult()">Search</a>
+            
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</section>

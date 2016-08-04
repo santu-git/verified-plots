@@ -9,10 +9,17 @@
  **********************************************************************************************/
 /** Map relative paths to URLs. */
 const map: any = {
+   "materialize": "vendor/materialize-css",
+   "angular2-materialize": "vendor/angular2-materialize",
+   "jquery": "vendor/jquery",
+   'ng2-completer': 'vendor/ng2-completer'
 };
 
 /** User packages configuration. */
 const packages: any = {
+  'materialize': { "format": "global", "main": "dist/js/materialize","defaultExtension": "js"},
+  'angular2-materialize': { "main": "dist/index", "defaultExtension": "js"},
+  'ng2-completer': { main: 'bundles/ng2-completer.js', format: 'cjs'} 
 };
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
@@ -27,6 +34,7 @@ const barrels: string[] = [
   '@angular/forms',
   '@angular/http',
   '@angular/router',
+  '@angular/router-deprecated',
   '@angular/platform-browser',
   '@angular/platform-browser-dynamic',
 
@@ -36,6 +44,9 @@ const barrels: string[] = [
   // App specific barrels.
   'app',
   'app/shared',
+  'app/home',
+  'app/result',
+  'app/menu',
   /** @cli-barrel */
 ];
 
