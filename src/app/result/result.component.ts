@@ -3,6 +3,7 @@ import { ROUTER_DIRECTIVES, Router, RouteParams } from '@angular/router-deprecat
 
 import { MenuComponent } from '../menu/menu.component';
 
+declare let L: any;
 @Component({
   moduleId: module.id,
   selector: 'app-result',
@@ -17,6 +18,10 @@ export class ResultComponent implements OnInit {
 
   ngOnInit() {
     this.location = this._routeParams.get('location');
+    var map = L.map('map-ui', {
+      center: [51.505, -0.09],
+      zoom: 13
+    });
   }
 
 }

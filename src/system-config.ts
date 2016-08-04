@@ -12,14 +12,16 @@ const map: any = {
    "materialize": "vendor/materialize-css",
    "angular2-materialize": "vendor/angular2-materialize",
    "jquery": "vendor/jquery",
-   'ng2-completer': 'vendor/ng2-completer'
+   'ng2-completer': 'vendor/ng2-completer',
+   "leaflet": "vendor/leaflet"
 };
 
 /** User packages configuration. */
 const packages: any = {
   'materialize': { "format": "global", "main": "dist/js/materialize","defaultExtension": "js"},
   'angular2-materialize': { "main": "dist/index", "defaultExtension": "js"},
-  'ng2-completer': { main: 'bundles/ng2-completer.js', format: 'cjs'} 
+  'ng2-completer': { main: 'bundles/ng2-completer.js', format: 'cjs'},
+  'leaflet': {main: 'dist/leaflet.js', format: 'cjs'}
 };
 
 ////////////////////////////////////////////////////////////////////////////////////////////////

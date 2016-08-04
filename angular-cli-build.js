@@ -19,7 +19,8 @@ module.exports = function(defaults) {
       'jquery/dist/*',
       'angular2-materialize/dist/*',
       'materialize-css/dist/**/*',
-      'ng2-completer/bundles/**/*+(js|js.map|js.map.gz)'
+      'ng2-completer/bundles/**/*+(js|js.map|js.map.gz)',
+      'leaflet/dist/*'
     ]
   });
 };
