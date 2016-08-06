@@ -12,7 +12,9 @@ import { CompleterCmp, CompleterService, CompleterData, CompleterItem, COMPLETER
   providers: [COMPLETER_DATA_PROVIDERS, CompleterService]
 })
 export class HomeComponent implements OnInit {
-  private seletedData: string;
+  private selectedLocality: string;
+  private latitude: string;
+  private longitude: string;
   private searchStr: string;
   private dataService: CompleterData;
   private searchData = [
@@ -28,12 +30,14 @@ export class HomeComponent implements OnInit {
   constructor(private completerService: CompleterService, private _router: Router) {
     this.dataService = completerService.remote("http://138.201.134.48:3005/localities.json?search=", 'name', 'name');
   }
-  public locationSelection(selected: CompleterItem) {
-    console.log(selected.originalObject.permalink);
-    this.seletedData = selected.originalObject.permalink;
+  public localitySelection(selected: CompleterItem) {
+    console.log(selected.originalObject);
+    this.selectedLocality = selected.originalObject.permalink;
+    this.latitude = selected.originalObject.latitude;
+    this.longitude = selected.originalObject.longitude
   }
   navigateResult(){
-    this._router.navigate(['Result',{location: this.seletedData}]);
+    this._router.navigate(['Result',{locality: this.selectedLocality, latitude: this.latitude, longitude: this.longitude}]);
   }
 
   ngOnInit() {
