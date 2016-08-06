@@ -28,6 +28,7 @@ export class ResultComponent implements OnInit {
       id: 'mapbox.streets',
       accessToken: 'pk.eyJ1Ijoic2FudHVtYXAiLCJhIjoiY2lyZ2x5bnI5MDE0a2dka3g1dnIwd212cCJ9.vFLHKbovsmq76Y_aagzgLg'
     }).addTo(map);
+
   }
 
 }

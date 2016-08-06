@@ -26,10 +26,11 @@ export class HomeComponent implements OnInit {
   ];
 
   constructor(private completerService: CompleterService, private _router: Router) {
-    this.dataService = completerService.local(this.searchData, 'color', 'color');
+    this.dataService = completerService.remote("http://138.201.134.48:3005/localities.json?search=", 'name', 'name');
   }
   public locationSelection(selected: CompleterItem) {
-    this.seletedData = selected.originalObject.color;
+    console.log(selected.originalObject.permalink);
+    this.seletedData = selected.originalObject.permalink;
   }
   navigateResult(){
     this._router.navigate(['Result',{location: this.seletedData}]);
