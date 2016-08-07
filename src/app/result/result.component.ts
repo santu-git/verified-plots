@@ -16,15 +16,22 @@ declare let L: any;
 export class ResultComponent implements OnInit {
 
   locality: string;
+  latitude: string;
+  longitude: string;
   properties: any;
   error: any;
   errorMessage: string;
+  map: any
   constructor(private _routeParams: RouteParams, private _propertyService: PropertyService){}
 
   ngOnInit() {
     this.locality = this._routeParams.get('locality');
-    var map = L.map('map-ui', {
-      center: [51.505, -0.09],
+    this.latitude = this._routeParams.get('latitude');
+    this.longitude = this._routeParams.get('longitude');
+    console.log(this.latitude);
+    console.log(this.longitude);
+    this.map = L.map('map-ui', {
+      center: [this.longitude,this.latitude],
       zoom: 13
     });
     L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
@@ -32,14 +39,23 @@ export class ResultComponent implements OnInit {
       maxZoom: 18,
       id: 'mapbox.streets',
       accessToken: 'pk.eyJ1Ijoic2FudHVtYXAiLCJhIjoiY2lyZ2x5bnI5MDE0a2dka3g1dnIwd212cCJ9.vFLHKbovsmq76Y_aagzgLg'
-    }).addTo(map);
+    }).addTo(this.map);
 
    //alert(this._propertyService.getServiceName());
    this._propertyService.getPropertiesByLocality(this.locality)
      .subscribe(
-         response=> this.properties = response,
+         response=>this.handleResponse(response),
          error => this.errorMessage = <any>error);
 
+    }
+
+    private handleResponse(response: any){
+      this.properties = response;
+      L.Icon.Default.imagePath = 'public/markers';
+      for(var property in this.properties){
+        L.marker([this.longitude,this.latitude]).addTo(this.map);
+      }
+      console.log(response);
     }
 
 }
