@@ -15,7 +15,13 @@
   <div id="map-ui" class="col s12 m8 lg8">
     
   </div>
-  <div class="col s12 m8 lg8">
-    
+  <div class="col s12 m4 lg4">
+    <ul *ngFor="let property of properties">
+      <li>
+        <h3>{{property.name}}</h3>
+        <h5>{{property.address}}</h5>
+        <h6>{{property.properties.dimension}}</h6>
+      </li>
+    </ul>
   </div>
 </div>
