@@ -29,7 +29,7 @@ export class ResultComponent implements OnInit {
     this.latitude = this._routeParams.get('latitude');
     this.longitude = this._routeParams.get('longitude');
     this.map = L.map('map-ui', {
-      center: [this.longitude,this.latitude],
+      center: [this.latitude,this.longitude],
       zoom: 13
     });
     // L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
