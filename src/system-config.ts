@@ -13,7 +13,8 @@ const map: any = {
    "angular2-materialize": "vendor/angular2-materialize",
    "jquery": "vendor/jquery",
    'ng2-completer': 'vendor/ng2-completer',
-   "leaflet": "vendor/leaflet"
+   "leaflet": "vendor/leaflet",
+   "google-layer": 'vendor/leaflet-plugins'
 };
 
 /** User packages configuration. */
@@ -21,7 +22,8 @@ const packages: any = {
   'materialize': { "format": "global", "main": "dist/js/materialize","defaultExtension": "js"},
   'angular2-materialize': { "main": "dist/index", "defaultExtension": "js"},
   'ng2-completer': { main: 'bundles/ng2-completer.js', format: 'cjs'},
-  'leaflet': {main: 'dist/leaflet.js', format: 'cjs'}
+  'leaflet': {main: 'dist/leaflet.js', format: 'cjs'},
+  'google-layer': {main: 'layer/tile/Google.js', format: 'cjs'}
 };
 
 ////////////////////////////////////////////////////////////////////////////////////////////////

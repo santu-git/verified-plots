@@ -20,7 +20,8 @@ module.exports = function(defaults) {
       'angular2-materialize/dist/*',
       'materialize-css/dist/**/*',
       'ng2-completer/bundles/**/*+(js|js.map|js.map.gz)',
-      'leaflet/dist/*'
+      'leaflet/dist/*',
+      'leaflet-plugins/layer/tile/Google.js'
     ]
   });
 };
