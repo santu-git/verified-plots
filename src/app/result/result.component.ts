@@ -38,8 +38,21 @@ export class ResultComponent implements OnInit {
     //   id: 'mapbox.streets',
     //   accessToken: 'pk.eyJ1Ijoic2FudHVtYXAiLCJhIjoiY2lyZ2x5bnI5MDE0a2dka3g1dnIwd212cCJ9.vFLHKbovsmq76Y_aagzgLg'
     // }).addTo(this.map);
+    
+    //Google tile Layer
     var googleLayer = new L.Google('ROADMAP');
     this.map.addLayer(googleLayer);
+
+    //CDP layer
+    var plu = L.tileLayer.wms("http://176.9.25.46:8066/geoserver/ows?",{
+      layers: 'geogo:plu',
+      format: 'image/png',
+      transparent: true,
+      version: '1.1.1',
+      srs: 'EPSG:3857',
+      opacity: 0.4
+    });
+    this.map.addLayer(plu);
    //alert(this._propertyService.getServiceName());
    this._propertyService.getPropertiesByLocality(this.locality)
      .subscribe(
@@ -52,7 +65,7 @@ export class ResultComponent implements OnInit {
       this.properties = response;
       L.Icon.Default.imagePath = 'public/markers';
       for(var property in this.properties){
-        L.marker([this.longitude,this.latitude]).addTo(this.map);
+        L.marker([this.latitude,this.longitude]).addTo(this.map);
       }
     }
 
